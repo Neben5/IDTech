@@ -25,19 +25,23 @@ public class TicTacToe extends PApplet{
     public void settings(){
         size(xCanvas,yCanvas);
     }
-    public void draw(){
+    public void draw() {
         background(255);
-        for(int i =0;i<rows;i++){
-            for(int j=0;j<cols;j++){
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
                 stroke(0);
                 noFill();
-                rect(i*w,j*h,w,h);
+                rect(i * w, j * h, w, h);
                 board[i][j].drawTurn();
             }
         }
-         checkWin();
+        checkWin();
         System.out.println(winner + "no");
-        if(winner!=-1){
+        if (winner != -1) {
+            background(0);
+        }
+
+        if (totalTurns == 9) {
             background(0);
         }
     }
